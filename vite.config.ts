@@ -1,19 +1,22 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  // GitHub Pages base path - update with your repo name
-  // base: '/cv-presentation/', // Uncomment and update when deploying to GitHub Pages
-  server: {
-    host: "::",
-    port: 8080,
-  },
   plugins: [react()],
+  base: '/cv-presentation/',
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    host: 'localhost',
+    port: 8080,
+    open: true
+  },
+  build: {
+    outDir: 'dist',
+    sourcemap: false
+  }
 });
