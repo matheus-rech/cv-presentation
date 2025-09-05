@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Presentation - Iframe Embed Examples</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #f8fafc;
+        }
+        h1 {
+            color: #1e293b;
+            margin-bottom: 30px;
+        }
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #475569;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        .code-block {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .code-block code {
+            color: #e2e8f0;
+        }
+        .demo-container {
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            background: #f8fafc;
+        }
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        .copy-btn:hover {
+            background: #2563eb;
+        }
+        .copy-btn:active {
+            transform: scale(0.98);
+        }
+        .note {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .responsive-iframe {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .responsive-iframe iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ CV Presentation - Iframe Embed Guide</h1>
+
+    <div class="section">
+        <h2>📋 Basic Iframe Embed</h2>
+        <p>The simplest way to embed your CV presentation:</p>
+        <div class="code-block">
+            <code id="basic-code">&lt;iframe 
+    src="https://your-domain.com/cv-presentation" 
+    width="100%" 
+    height="600"
+    frameborder="0"
+    title="CV Presentation - Dr. Matheus Machado Rech"&gt;
+&lt;/iframe&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('basic-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="section">
+        <h2>🎨 Fullscreen Capable Iframe</h2>
+        <p>Allow users to view in fullscreen mode:</p>
+        <div class="code-block">
+            <code id="fullscreen-code">&lt;iframe 
+    src="https://your-domain.com/cv-presentation" 
+    width="100%" 
+    height="700"
+    frameborder="0"
+    allowfullscreen="true"
+    allow="fullscreen"
+    title="CV Presentation - Dr. Matheus Machado Rech"
+    style="border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"&gt;
+&lt;/iframe&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('fullscreen-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="section">
+        <h2>📱 Responsive Iframe (16:9)</h2>
+        <p>Automatically adjusts to container width while maintaining aspect ratio:</p>
+        <div class="code-block">
+            <code id="responsive-code">&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"&gt;
+    &lt;iframe 
+        src="https://your-domain.com/cv-presentation" 
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+        frameborder="0"
+        allowfullscreen="true"
+        title="CV Presentation - Dr. Matheus Machado Rech"&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('responsive-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Fixed Size Embed</h2>
+        <p>For sidebars or specific layout requirements:</p>
+        <div class="code-block">
+            <code id="fixed-code">&lt;iframe 
+    src="https://your-domain.com/cv-presentation" 
+    width="800" 
+    height="600"
+    frameborder="0"
+    style="border: 2px solid #e5e7eb; border-radius: 8px;"
+    title="CV Presentation - Dr. Matheus Machado Rech"&gt;
+&lt;/iframe&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('fixed-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Direct Link to Specific Slide</h2>
+        <p>Link directly to a specific slide (once deployed):</p>
+        <div class="code-block">
+            <code id="slide-code">&lt;iframe 
+    src="https://your-domain.com/cv-presentation#slide-3" 
+    width="100%" 
+    height="600"
+    frameborder="0"
+    title="CV Presentation - Teaching Experience"&gt;
+&lt;/iframe&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('slide-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="section">
+        <h2>🎨 Custom Styled Container</h2>
+        <p>With custom styling and loading message:</p>
+        <div class="code-block">
+            <code id="styled-code">&lt;div style="
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);"&gt;
+    &lt;iframe 
+        src="https://your-domain.com/cv-presentation" 
+        width="100%" 
+        height="700"
+        frameborder="0"
+        style="border-radius: 12px; background: white;"
+        title="CV Presentation - Dr. Matheus Machado Rech"
+        loading="lazy"&gt;
+        &lt;p&gt;Loading CV Presentation...&lt;/p&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('styled-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="section">
+        <h2>⚡ Performance Optimized (Lazy Loading)</h2>
+        <p>Load iframe only when user scrolls to it:</p>
+        <div class="code-block">
+            <code id="lazy-code">&lt;iframe 
+    src="https://your-domain.com/cv-presentation" 
+    width="100%" 
+    height="600"
+    frameborder="0"
+    loading="lazy"
+    importance="low"
+    title="CV Presentation - Dr. Matheus Machado Rech"&gt;
+&lt;/iframe&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('lazy-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="note">
+        <strong>📌 Note:</strong> Replace <code>https://your-domain.com/cv-presentation</code> with your actual deployment URL after deploying to GitHub Pages, Vercel, or Netlify.
+    </div>
+
+    <div class="section">
+        <h2>🚀 Local Testing</h2>
+        <p>For testing locally before deployment:</p>
+        <div class="code-block">
+            <code id="local-code">&lt;iframe 
+    src="http://localhost:8080" 
+    width="100%" 
+    height="600"
+    frameborder="0"
+    title="CV Presentation - Local Development"&gt;
+&lt;/iframe&gt;</code>
+        </div>
+        <button class="copy-btn" onclick="copyCode('local-code')">📋 Copy Code</button>
+    </div>
+
+    <div class="section">
+        <h2>📊 Demo - Responsive Iframe</h2>
+        <div class="demo-container">
+            <div class="responsive-iframe">
+                <iframe 
+                    src="http://localhost:8080" 
+                    frameborder="0"
+                    allowfullscreen="true"
+                    title="CV Presentation Demo">
+                </iframe>
+            </div>
+        </div>
+        <p style="color: #64748b; font-size: 14px;">
+            ↑ This is a live demo using the responsive iframe code (connects to localhost:8080)
+        </p>
+    </div>
+
+    <script>
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const textToCopy = codeElement.textContent;
+            
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                // Change button text temporarily
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Copied!';
+                btn.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#3b82f6';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy. Please select and copy manually.');
+            });
+        }
+    </script>
+</body>
+</html>
