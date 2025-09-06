@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Build the project
-npm run build
+# Build the project with GitHub Pages base path
+GITHUB_PAGES=true npm run build
 
 # Create a temporary directory
 rm -rf gh-pages-temp
